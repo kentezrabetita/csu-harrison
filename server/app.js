@@ -1,6 +1,10 @@
 const express = require('express');
 
+const db = require('./model/index');
+
 const app = express();
+
+db.sequelize.sync();
 
 app.get('/', (req, res) => {
   res.send('Hi!');
